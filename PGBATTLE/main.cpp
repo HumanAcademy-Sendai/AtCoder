@@ -1,15 +1,13 @@
 #include <iostream>
-#include <algorithm>
 
 using namespace std;
 
 int main(void)
 {
-	int n, k, x, y;
-	cin >> n >> k >> x >> y;
+	int a, b, h;
+	cin >> a >> b >> h;
 
-	int price = min(n, k) * x + max(n - k, 0) * y;
-	cout << price << endl;
+	cout << (a + b) * h / 2 << endl;
 
 	return 0;
 }
