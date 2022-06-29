@@ -1,44 +1,26 @@
 #include <iostream>
-#include <set>
+#include <algorithm>
 
 using namespace std;
 
 int main(void)
 {
-	set<int> colors;
+	int candy[3];
+	cin >> candy[0] >> candy[1] >> candy[2];
 
-	for (int i = 0; i < 3; i++) {
-		int color_no;
-		cin >> color_no;
-		colors.insert(color_no);
-	}
+	sort(begin(candy), end(candy));
+	if(candy[2] == candy[0] + candy[1])
+		cout << "Yes" << endl;
+	else
+		cout << "No"  << endl;
 
-	cout << colors.size() << endl;
-	// ƒtƒ‰ƒO‚ð—§‚Ä‚é
-	//bool colors[100]{ false };
-	//for (int i = 0; i < 3; i++) {
-	//	int color_no;
-	//	cin >> color_no;
-	//	colors[color_no] = true;
-	//}
+	//int a, b, c;
+	//cin >> a >> b >> c;
 
-	//int count = 0;
-	//for (int i = 0; i < 100; i++) {
-	//	if (colors[i])
-	//		count++;
-	//}
-
-	//cout << count << endl;
-
-	// if•¶‚Å”»’è‚·‚é
-	//if (a != b && a != c && b != c)
-	//	cout << 3 << endl;
-	//if ((a == b && a != c)
-	// || (a == c && a != b)
-	// || (b == c && b != a))
-	//	cout << 2 << endl;
-	//if (a == b && a == c)
-	//	cout << 1 << endl;
+	//if (a == b + c || b == a + c || c == a + b)
+	//	cout << "Yes" << endl;
+	//else
+	//	cout << "No"  << endl;
 
 	return 0;
 }
