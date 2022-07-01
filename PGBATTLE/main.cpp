@@ -1,26 +1,20 @@
 #include <iostream>
-#include <algorithm>
 
 using namespace std;
 
 int main(void)
 {
-	int candy[3];
-	cin >> candy[0] >> candy[1] >> candy[2];
+	int a, b, c, d;
+	cin >> a >> b >> c >> d;
 
-	sort(begin(candy), end(candy));
-	if(candy[2] == candy[0] + candy[1])
-		cout << "Yes" << endl;
-	else
-		cout << "No"  << endl;
+	cout << max(a * b, c * d) << endl;
 
-	//int a, b, c;
-	//cin >> a >> b >> c;
-
-	//if (a == b + c || b == a + c || c == a + b)
-	//	cout << "Yes" << endl;
+	//int ab = a * b;
+	//int cd = c * d;
+	//if (ab >= cd)
+	//	cout << ab << endl;
 	//else
-	//	cout << "No"  << endl;
+	//	cout << cd << endl;
 
 	return 0;
 }
