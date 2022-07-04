@@ -4,17 +4,15 @@ using namespace std;
 
 int main(void)
 {
-	int a, b, c, d;
-	cin >> a >> b >> c >> d;
+	int x;
+	cin >> x;
 
-	cout << max(a * b, c * d) << endl;
+	cout << ((x < 1200) ? "ABC" : "ARC") << endl;
 
-	//int ab = a * b;
-	//int cd = c * d;
-	//if (ab >= cd)
-	//	cout << ab << endl;
+	//if (x < 1200)
+	//	cout << "ABC" << endl;
 	//else
-	//	cout << cd << endl;
+	//	cout << "ARC" << endl;
 
 	return 0;
 }
