@@ -4,15 +4,20 @@ using namespace std;
 
 int main(void)
 {
-	int x;
-	cin >> x;
+	int a, b;
+	cin >> a >> b;
 
-	cout << ((x < 1200) ? "ABC" : "ARC") << endl;
+	a += (a == 1) * 13;
+	b += (b == 1) * 13;
+	//if (a == 1)	a += 13;
+	//if (b == 1)	b += 13;
 
-	//if (x < 1200)
-	//	cout << "ABC" << endl;
-	//else
-	//	cout << "ARC" << endl;
+	if (a > b)
+		cout << "Alice" << endl;
+	else if (b > a)
+		cout << "Bob"   << endl;
+	else
+		cout << "Draw"  << endl;
 
 	return 0;
 }
