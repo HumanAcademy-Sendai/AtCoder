@@ -4,20 +4,14 @@ using namespace std;
 
 int main(void)
 {
-	int a, b;
-	cin >> a >> b;
+	int n;
+	cin >> n;
 
-	a += (a == 1) * 13;
-	b += (b == 1) * 13;
-	//if (a == 1)	a += 13;
-	//if (b == 1)	b += 13;
+	int price = 800 * n;
+	int back  = (n / 15) * 200;
+	cout << price - back << endl;
 
-	if (a > b)
-		cout << "Alice" << endl;
-	else if (b > a)
-		cout << "Bob"   << endl;
-	else
-		cout << "Draw"  << endl;
+	// cout << 800 * n - (n / 15) * 200 << endl;
 
 	return 0;
 }
