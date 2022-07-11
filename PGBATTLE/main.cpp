@@ -4,22 +4,13 @@ using namespace std;
 
 int main(void)
 {
-	char a, b;
-	cin >> a >> b;
+	int n, k;
+	cin >> n >> k;
 
-	if (a == b)
-		cout << "H" << endl;
-	else
-		cout << 'D' << endl;
-
-	//if (a == 'H' && b == 'H')
-	//	cout << 'H' << endl;
-	//else if (a == 'H' && b == 'D')
-	//	cout << 'D' << endl;
-	//else if (a == 'D' && b == 'H')
-	//	cout << 'D' << endl;
-	//else if (a == 'D' && b == 'D')
-	//	cout << 'H' << endl;
+	int answer = k;
+	for (int i = 0; i < n - 1; i++)
+		answer *= (k - 1);
+	cout << answer << endl;
 
 	return 0;
 }
