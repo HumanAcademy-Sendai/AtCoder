@@ -4,13 +4,14 @@ using namespace std;
 
 int main(void)
 {
-	int n, k;
-	cin >> n >> k;
+	int a, b, c;
+	cin >> a >> b >> c;
 
-	int answer = k;
-	for (int i = 0; i < n - 1; i++)
-		answer *= (k - 1);
-	cout << answer << endl;
+	//if (b - a == c - b)
+	//	cout << "YES" << endl;
+	//else
+	//	cout << "NO" << endl;
+	cout << (b - a == c - b ? "YES" : "NO") << endl;
 
 	return 0;
 }
