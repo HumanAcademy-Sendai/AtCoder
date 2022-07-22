@@ -4,14 +4,10 @@ using namespace std;
 
 int main(void)
 {
-	int a, b, c;
-	cin >> a >> b >> c;
+	int a, b;
+	cin >> a >> b;
 
-	//if (b - a == c - b)
-	//	cout << "YES" << endl;
-	//else
-	//	cout << "NO" << endl;
-	cout << (b - a == c - b ? "YES" : "NO") << endl;
+	cout << (a + b) % 24 << endl;
 
 	return 0;
 }
