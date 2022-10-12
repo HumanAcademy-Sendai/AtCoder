@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -7,27 +8,20 @@ int main(void)
 	int n;
 	cin >> n;
 
-	// Aの合計温度を求める
-	int sum_a = 0;
-	for (int i = 0; i < n; i++) {
-		int a;
-		cin >> a;
-		sum_a += a;
+	std::vector<int> count(n + 1, 0);
+	for (int i = 0; i < n - 1; ++i) {
+		int a, b;
+		cin >> a >> b;
+		++count[a];
+		++count[b];
 	}
+	count[1] = 0;	// 部屋1は除外
 
-	// Aの合計温度から、Bの温度を引く
-	for (int i = 0; i < n; i++) {
-		int b;
-		cin >> b;
-		sum_a -= b;
-	}
-
-	if (sum_a > 0)
-		cout << "A" << endl;
-	else if (sum_a < 0)
-		cout << "B" << endl;
-	else
-		cout << "same" << endl;
+	std::erase_if(
+		count,
+		[](int x){ return x != 1; }
+	);
+	cout << count.size() << endl;
 
 	return 0;
 }
