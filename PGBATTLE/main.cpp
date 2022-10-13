@@ -1,27 +1,21 @@
 #include <iostream>
-#include <vector>
+#include <iomanip>
+#include <string>
 
 using namespace std;
 
 int main(void)
 {
-	int n;
+	long long n;
 	cin >> n;
 
-	std::vector<int> count(n + 1, 0);
-	for (int i = 0; i < n - 1; ++i) {
-		int a, b;
-		cin >> a >> b;
-		++count[a];
-		++count[b];
-	}
-	count[1] = 0;	// •”‰®1‚ÍœŠO
+	cout << "0.";
 
-	std::erase_if(
-		count,
-		[](int x){ return x != 1; }
-	);
-	cout << count.size() << endl;
+	string str2n = to_string(1LL << n);
+	for (int i = 0; i < n - str2n.length(); ++i)
+		cout << '0';
+
+	cout << str2n << endl;
 
 	return 0;
 }
