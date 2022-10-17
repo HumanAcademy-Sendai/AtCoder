@@ -1,21 +1,22 @@
 #include <iostream>
-#include <iomanip>
 #include <string>
 
 using namespace std;
 
 int main(void)
 {
-	long long n;
+	int n;
 	cin >> n;
 
-	cout << "0.";
+	int answer = 0;
+	for (int i = 0; i < n; ++i) {
+		string s;
+		cin >> s;
+		if (s != "AC")
+			answer += 5;
+	}
 
-	string str2n = to_string(1LL << n);
-	for (int i = 0; i < n - str2n.length(); ++i)
-		cout << '0';
-
-	cout << str2n << endl;
+	cout << answer << endl;
 
 	return 0;
 }
