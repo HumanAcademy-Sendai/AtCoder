@@ -1,22 +1,16 @@
 #include <iostream>
-#include <string>
 
 using namespace std;
 
 int main(void)
 {
-	int n;
-	cin >> n;
+    int w, k, d;
+    cin >> w >> k >> d;
 
-	int answer = 0;
-	for (int i = 0; i < n; ++i) {
-		string s;
-		cin >> s;
-		if (s != "AC")
-			answer += 5;
-	}
+    if (d >= std::max(k, w - k))
+        cout << "Yes" << endl;
+    else
+        cout << "No" << endl;
 
-	cout << answer << endl;
-
-	return 0;
+    return 0;
 }
