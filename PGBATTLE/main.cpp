@@ -1,28 +1,21 @@
 #include <iostream>
-#include <vector>
-#include <algorithm>
 
 using namespace std;
 
 int main(void)
 {
-    int n, q;
-    cin >> n >> q;
+    int n, k;
+    cin >> n >> k;
 
-    vector<bool> back_flag(n + 1, 0);   // false...•\, true...— 
-    for (int i = 0; i < q; ++i) {
-        int L, R;
-        cin >> L >> R;
-        for (int j = L; j <= R; ++j)
-            back_flag[j] = !back_flag[j];
+    long long int second = 0;
+    for (int i = 0; i < n; i++) {
+        int a;
+        cin >> a;
+        if (a > k)
+            second += a - k;
     }
 
-    int answer = std::count_if(
-        back_flag.begin() + 1,
-        back_flag.end(),
-        [](bool flag) { return flag; }
-    );
-    cout << answer << endl;
+    cout << second << endl;
 
     return 0;
 }
