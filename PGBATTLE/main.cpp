@@ -4,18 +4,20 @@ using namespace std;
 
 int main(void)
 {
-    int n, k;
-    cin >> n >> k;
+    string s;
+    cin >> s;
 
-    long long int second = 0;
-    for (int i = 0; i < n; i++) {
-        int a;
-        cin >> a;
-        if (a > k)
-            second += a - k;
+    string text;
+    for (int i = 0; i < s.length(); ++i) {
+        if (s[i] != 'B') {
+            text.push_back(s[i]);
+        }
+        else {
+            if(!text.empty())
+                text.pop_back();
+        }
     }
-
-    cout << second << endl;
+    cout << text << endl;
 
     return 0;
 }
