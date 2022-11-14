@@ -4,32 +4,23 @@ using namespace std;
 
 int main(void)
 {
-    enum COLORS {
-        GRAY, BROWN,  GREEN,  LIGHTBLUE,
-        BLUE, YELLOW, ORANGE, RED,
-        FREE,
-    };
+    string w;
+    cin >> w;
 
-    int n;
-    cin >> n;
-
-    int colors[9]{};
-    for (int i = 0; i < n; i++) {
-        int a;
-        cin >> a;
-
-        const int index = a / 400;
-        if(index < FREE)
-            colors[index] = 1;
-        else
-            ++colors[FREE];
+    if (w.length() % 2 != 0) {
+        cout << "No" << endl;
+        return 0;
     }
 
-    int answer = 0;
-    for (int i = 0; i < FREE; ++i)
-        answer += colors[i];
+    bool odd[26]{};
+    for (int i = 0; i < w.length(); ++i)
+        odd[w[i] - 'a'] ^= true;
 
-    cout << answer << " " << answer + colors[FREE] << endl;
+    auto result = std::find(begin(odd), end(odd), true);
+    if (result == end(odd))
+        cout << "Yes" << endl;
+    else
+        cout << "No" << endl;
 
     return 0;
 }
