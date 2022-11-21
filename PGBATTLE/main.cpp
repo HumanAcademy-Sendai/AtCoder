@@ -4,23 +4,24 @@ using namespace std;
 
 int main(void)
 {
-    string w;
-    cin >> w;
+    string s;
+    cin >> s;
 
-    if (w.length() % 2 != 0) {
-        cout << "No" << endl;
-        return 0;
-    }
+    cout << s.rfind('Z', s.length()) - s.find('A', 0) + 1 << endl;
 
-    bool odd[26]{};
-    for (int i = 0; i < w.length(); ++i)
-        odd[w[i] - 'a'] ^= true;
+    // 'A'‚ð’T‚·
+    //for (idx_a = 0; idx_a < s.length(); ++idx_a) {
+    //    if (s[idx_a] == 'A')
+    //        break;
+    //}
 
-    auto result = std::find(begin(odd), end(odd), true);
-    if (result == end(odd))
-        cout << "Yes" << endl;
-    else
-        cout << "No" << endl;
+    // 'Z'‚ð’T‚·
+    //for (idx_z = s.length() - 1; idx_z >= 0; --idx_z) {
+    //    if (s[idx_z] == 'Z')
+    //        break;
+    //}
+
+    //cout << idx_z - idx_a + 1 << endl;
 
     return 0;
 }
