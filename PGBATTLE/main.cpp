@@ -4,24 +4,19 @@ using namespace std;
 
 int main(void)
 {
-    string s;
-    cin >> s;
+    string o;
+    cin >> o;
 
-    cout << s.rfind('Z', s.length()) - s.find('A', 0) + 1 << endl;
+    string e;
+    cin >> e;
 
-    // 'A'‚ð’T‚·
-    //for (idx_a = 0; idx_a < s.length(); ++idx_a) {
-    //    if (s[idx_a] == 'A')
-    //        break;
-    //}
-
-    // 'Z'‚ð’T‚·
-    //for (idx_z = s.length() - 1; idx_z >= 0; --idx_z) {
-    //    if (s[idx_z] == 'Z')
-    //        break;
-    //}
-
-    //cout << idx_z - idx_a + 1 << endl;
+    for (int i = 0; i < e.length(); ++i) {
+        cout << o[i];
+        cout << e[i];
+    }
+    if(o.length() != e.length())
+        cout << o[o.length() - 1];
+    cout << endl;
 
     return 0;
 }
