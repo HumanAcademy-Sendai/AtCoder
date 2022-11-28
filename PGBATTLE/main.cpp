@@ -4,19 +4,18 @@ using namespace std;
 
 int main(void)
 {
-    string o;
-    cin >> o;
+    int n;
+    cin >> n;
 
-    string e;
-    cin >> e;
-
-    for (int i = 0; i < e.length(); ++i) {
-        cout << o[i];
-        cout << e[i];
+    int answer = 0;
+    for (int i = 1; i <= n; ++i) {
+        int a;
+        cin >> a;
+        //if (i % 2 != 0 && a % 2 != 0)
+        if ((i & a & 0x01))
+            ++answer;
     }
-    if(o.length() != e.length())
-        cout << o[o.length() - 1];
-    cout << endl;
+    cout << answer << endl;
 
     return 0;
 }
