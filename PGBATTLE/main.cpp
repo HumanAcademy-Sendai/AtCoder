@@ -1,35 +1,24 @@
 #include <iostream>
+#include <set>
 
 using namespace std;
 
 int main(void)
 {
-    string s;
-    cin >> s;
+    int n;
+    cin >> n;
 
-    long long k;
-    cin >> k;
-
-    if (k == 1) {
-        cout << s[0] << endl;
-    }
-    else {
-        // 1‚ªk•¶ŽšˆÈã•À‚ñ‚Å‚¢‚é‚©?
-        // •À‚ñ‚Å‚¢‚½‚ç1‚ª“š‚¦
-        // •À‚ñ‚Å‚¢‚È‚©‚Á‚½‚çA1‚ÌŽŸ‚Éo‚Ä‚«‚½”Žš‚ª“š‚¦
-        int one_count = 0;
-        for (int i = 0; i < s.length(); ++i) {
-            if (s[i] == '1')
-                ++one_count;
-            else
-                break;
+    std::set<int> kuku;
+    for (int y = 1; y <= 9; ++y) {
+        for (int x = 1; x <= 9; ++x) {
+            kuku.insert(x * y);
         }
+    }
 
-        if (one_count >= k)
-            cout << '1' << endl;
-        else
-            cout << s[one_count] << endl;
-    }    
+    if (kuku.count(n) > 0)
+        cout << "Yes" << endl;
+    else
+        cout << "No" << endl;
 
     return 0;
 }
