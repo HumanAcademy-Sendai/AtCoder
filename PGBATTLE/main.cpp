@@ -1,5 +1,5 @@
 #include <iostream>
-#include <set>
+#include <map>
 
 using namespace std;
 
@@ -8,17 +8,23 @@ int main(void)
     int n;
     cin >> n;
 
-    std::set<int> kuku;
-    for (int y = 1; y <= 9; ++y) {
-        for (int x = 1; x <= 9; ++x) {
-            kuku.insert(x * y);
-        }
+    long long k;
+    cin >> k;
+
+    map<int, long long> number;
+    for (int i = 0; i < n; ++i) {
+        long long a, b;
+        cin >> a >> b;
+        number[a] += b;
     }
 
-    if (kuku.count(n) > 0)
-        cout << "Yes" << endl;
-    else
-        cout << "No" << endl;
+    for (int i = 1; i < number.size(); ++i) {
+        k -= number[i];
+        if (k <= 0) {
+            cout << i << endl;
+            break;
+        }
+    }
 
     return 0;
 }
