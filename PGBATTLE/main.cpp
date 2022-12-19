@@ -4,19 +4,28 @@ using namespace std;
 
 int main(void)
 {
-    int n, m;
-    cin >> n >> m;
+    string s[3];
+    cin >> s[0];
+    cin >> s[1];
+    cin >> s[2];
 
-    int road[50 + 1]{};
-    for (int i = 0; i < m; ++i) {
-        int a, b;
-        cin >> a >> b;
-        ++road[a];
-        ++road[b];
+    // 何枚目のカードを使っているか
+    int number[3]{};
+
+    // 誰のターンかを入れる
+    int turn = 0;   // Aのターンから
+    while (true) {
+        // 勝利条件
+        if (number[turn] >= s[turn].length()) {
+            cout << (char)('A' + turn) << endl;
+            break;
+        }
+
+        // 指名された人が場にカードを出す
+        int card = s[turn][number[turn]];
+        ++number[turn];
+        turn = card - 'a';
     }
-
-    for (int i = 1; i < n; ++i)
-        cout << road[i] << endl;
 
     return 0;
 }
